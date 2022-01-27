@@ -1,3 +1,4 @@
+// Import components so we can access it
 import React from "react";
 import "./App.css";
 import Row from "./Row";
@@ -12,11 +13,14 @@ function App() {
       {/* banner */}
       <Nav />
       <Banner />
+      {/* Our Netflix Originals are a larger size  */}
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow
       />
+
+      {/* We are referencing our key in our requests.js to access the value */}
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />

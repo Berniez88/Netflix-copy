@@ -5,9 +5,11 @@ import "./Banner.css";
 function Banner() {
   const [movie, setMovie] = useState([]);
 
+  // This useEffect will only run once as our bracket in line 20 is empty
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
+      // setMovie gives us a random movie object
       setMovie(
         request.data.results[
           Math.floor(Math.random() * request.data.results.length - 1)
@@ -19,7 +21,7 @@ function Banner() {
   }, []);
 
   console.log(movie);
-
+  // Truncate minimizes the description for the banner
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }

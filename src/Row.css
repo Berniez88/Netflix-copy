@@ -1,34 +1,39 @@
 .row {
-  color: white;
   margin-left: 20px;
+  color: #fff;
 }
 
-.row__posters {
+.row_poster {
+  /* this will keep the aspect ratio */
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  /* this transition makes our hover effect smooth */
+  transition: transform 450ms;
+  margin-right: 10px;
+}
+
+/* scroll bar */
+.row_posters {
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
 }
 
-.row__posters::-webkit-scrollbar {
+/* Hides our scroll bar but the functionality still works */
+.row_posters::-webkit-scrollbar {
   display: none;
 }
-.row__poster {
-  object-fit: contain;
-  width: 100%;
-  max-height: 100px;
-  margin-right: 10px;
-  transition: transform 450ms;
-}
 
-.row__poster:hover {
+.row_poster:hover {
   transform: scale(1.08);
 }
 
-.row__posterLarge {
+.row_posterLarge {
   max-height: 250px;
 }
 
-.row__posterLarge:hover {
+.row_posterLarge:hover {
   transform: scale(1.09);
 }
